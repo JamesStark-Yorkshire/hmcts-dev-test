@@ -42,7 +42,9 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        //
+        $task->fill($request->validated())->save();
+
+        return $task->refresh();
     }
 
     /**
