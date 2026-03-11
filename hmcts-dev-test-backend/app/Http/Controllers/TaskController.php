@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use Illuminate\Http\Response;
 
 class TaskController extends Controller
 {
@@ -33,7 +34,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        //
+        return $task;
     }
 
     /**
@@ -49,6 +50,10 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        if($task->delete()) {
+            return response(null, Response::HTTP_NO_CONTENT);
+        }
+
+        return response(null, Response::HTTP_CONFLICT);
     }
 }
