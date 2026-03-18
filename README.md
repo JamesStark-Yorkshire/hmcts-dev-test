@@ -20,6 +20,10 @@ Copy `.env.sail` as `.env` in the root directory of `hmcts-dev-test-backend` to 
 
 Refer to [Laravel Sail](https://laravel.com/docs/12.x/sail) for troubleshooting.
 
+#### Running Test in Docker
+1. Run `./vendor/bin/sail up` start the project in docker if you haven't done so
+2. Run the following command to start the project `./vendor/bin/sail test`
+
 ## Frontend
 
 WIP

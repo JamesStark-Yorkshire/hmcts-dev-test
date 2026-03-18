@@ -14,7 +14,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return Task::all();
+        return Task::paginate(10);
     }
 
     /**
